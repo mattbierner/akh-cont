@@ -1,7 +1,7 @@
 [Akh](https://github.com/mattbierner/akh) continuation monad
 
 ## API
-The continuation transformer `ContT` layers continuation control over a monad. The base type `Cont, provides continuation control on its own. The continuation transformer is a monad, functor, and applicative functor.
+The continuation transformer `ContT` layers continuation control over a monad. The base type `Cont`, provides continuation control on its own. The continuation transformer is a monad, functor, and applicative functor.
 
 ### `require('akh.cont').Cont`
 Continuation monad. 
@@ -23,6 +23,7 @@ cont.runCont(c, console.log); // logs: -4
 #### `Cont.callcc(f)`
 Reify the current continuation and pass it to `f`. `f` can invoke the continuation with a computation to continue execution, or return a computation directly to abort without calling the continuation. `f` may also capture the continuation `k` and invoke it multiple times with different values.
 
+----
 
 ### `require('akh.cont').ContT`
 The continuation transformer, `aka::trans::cont`, layers continuation control over a monad. The base type, `aka::cont`, provides continuation control on its own.
