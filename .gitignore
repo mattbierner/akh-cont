@@ -1,0 +1,25 @@
+# Project Files #
+#################
+.project
+node_modules
+_site
+.settings
+
+# OS Files #
+############
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Temp Files #
+##############
+*~
+*.tmp*
+*.orig
+*.cache
+*.log
+
+
+# Node Files #
+node_modules

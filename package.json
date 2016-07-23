@@ -1,0 +1,28 @@
+{
+    "name": "akh.cont",
+    "version": "0.0.0",
+    "description": "Akh continuation monad",
+    "author": "Matt Bierner",
+    "license": "MIT",
+    "keywords": [
+        "monad transformer",
+        "monad",
+        "akh",
+        "continuation"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mattbierner/akh-cont.git"
+    },
+    "bugs": {
+        "url": "https://github.com/mattbierner/akh-cont/issues"
+    },
+    "main": "index.js",
+    "dependencies": {
+        "akh.core.spec": "0.x",
+        "akh.identity": "0.x"
+    },
+    "scripts": {
+        "test": "mocha ./tests"
+    }
+}
