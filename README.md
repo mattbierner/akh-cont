@@ -26,8 +26,7 @@ Reify the current continuation and pass it to `f`. `f` can invoke the continuati
 ----
 
 ### `require('akh.cont').ContT`
-The continuation transformer, `aka::trans::cont`, layers continuation control over a monad. The base type, `aka::cont`, provides continuation control on its own.
-
+The continuation transformer, layers continuation control over a monad.
 
 #### `ContT.runContT(m, k)`
 Same as `Cont.runCont` but for transformed types
