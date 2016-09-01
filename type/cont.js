@@ -14,7 +14,11 @@ const Cont = ContT(Identity);
  * @param m Computation.
  * @param k Outer continuation.
  */
-Cont.runCont = (m, k) =>
-    Identity.runIdentity(ContT.runContT(m, x => Identity.of(k(x))))
+Cont.run = (m, k) =>
+    Identity.run(ContT.run(m, x => Identity.of(k(x))))
+
+Cont.prototype.run = function(k) {
+    return Cont.run(this, k)
+}
 
 module.exports = Cont;

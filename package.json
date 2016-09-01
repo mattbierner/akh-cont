@@ -1,6 +1,6 @@
 {
     "name": "akh.cont",
-    "version": "0.0.0",
+    "version": "0.1.0",
     "description": "Akh continuation monad",
     "author": "Matt Bierner",
     "license": "MIT",
@@ -20,7 +20,12 @@
     "main": "index.js",
     "dependencies": {
         "akh.core.spec": "0.x",
-        "akh.identity": "0.x"
+        "akh.core.trampoline": "^0.0.0",
+        "akh.identity": "^0.1.0"
+    },
+    "devDependencies": {
+        "chai": "*",
+        "mocha": "*"
     },
     "scripts": {
         "test": "mocha ./tests"

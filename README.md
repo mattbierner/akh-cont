@@ -6,18 +6,19 @@ The continuation transformer `ContT` layers continuation control over a monad. T
 ### `require('akh.cont').Cont`
 Continuation monad. 
 
-#### `Cont.runCont(m, k)`
+#### `Cont.runCont(m, k)` `m.run(k)`
 Perform a continuation computation `m` and complete with outer continuation `k`.
 
 ```js
-const cont = requre('akh.cont').Cont
+const Cont = requre('akh.cont').Cont
 
-var c = cont.of(3)
+var c = Cont.of(3)
         .callcc(k =>
             k(4).map(x => x + 1))
         .map((x) => -x);
 
-cont.runCont(c, console.log); // logs: -4
+Cont.run(c, console.log); // logs: -4
+c.run(console.log)
 ```
 
 #### `Cont.callcc(f)`
@@ -26,9 +27,9 @@ Reify the current continuation and pass it to `f`. `f` can invoke the continuati
 ----
 
 ### `require('akh.cont').ContT`
-The continuation transformer, layers continuation control over a monad.
+The continuation transformer, layers continuation control over a monad. 
 
-#### `ContT.runContT(m, k)`
+#### `ContT.run(m, k)` `tm.run(k)`
 Same as `Cont.runCont` but for transformed types
 
 #### `ContT.callcc(m, k)`

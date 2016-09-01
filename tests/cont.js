@@ -8,8 +8,8 @@ describe("Cont", () => {
     it("simple of", () => {
         const c = Cont.of(3)
 
-        assert.deepEqual(
-            Cont.runCont(c, sqr),
+        assert.strictEqual(
+            Cont.run(c, sqr),
             9)
     })
 
@@ -18,9 +18,9 @@ describe("Cont", () => {
             return Cont.of(x + 5)
         })
 
-        assert.deepEqual(
-            Cont.runCont(c, sqr),
-            64)
+        assert.strictEqual(64, Cont.run(c, sqr))
+
+        assert.strictEqual(64, c.run(sqr))
     })
 
     it("chain", () => {
@@ -32,8 +32,8 @@ describe("Cont", () => {
                 return Cont.of(x / 2)
             })
 
-        assert.deepEqual(
-            Cont.runCont(c, sqr),
+        assert.strictEqual(
+            Cont.run(c, sqr),
             16)
     })
 
@@ -47,7 +47,7 @@ describe("Cont", () => {
         }
 
         assert.deepEqual(
-            Cont.runCont(c, sqr),
+            Cont.run(c, sqr),
             10000 * 10000)
     })
 
@@ -59,7 +59,7 @@ describe("Cont", () => {
         }
 
         assert.deepEqual(
-            Cont.runCont(f(0), sqr),
+            Cont.run(f(0), sqr),
             10001 * 10001)
     })
 
@@ -70,7 +70,7 @@ describe("Cont", () => {
             })
 
         assert.deepEqual(
-            Cont.runCont(c, sqr),
+            Cont.run(c, sqr),
             16)
     })
 
@@ -82,7 +82,7 @@ describe("Cont", () => {
             })
 
         assert.deepEqual(
-            Cont.runCont(c, sqr),
+            Cont.run(c, sqr),
             16)
     })
 
@@ -96,7 +96,7 @@ describe("Cont", () => {
             })
 
         assert.deepEqual(
-            Cont.runCont(c, sqr),
+            Cont.run(c, sqr),
             36)
     })
 
@@ -111,7 +111,7 @@ describe("Cont", () => {
             })
 
         assert.deepEqual(
-            Cont.runCont(c, sqr),
+            Cont.run(c, sqr),
             10 * 10)
     })
 }) 

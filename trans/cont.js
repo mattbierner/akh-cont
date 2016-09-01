@@ -2,14 +2,14 @@
  * Continuation monad transformer.
  */
 "use strict"
-const tail = require('./_tail')
+const tramp = require('akh.core.trampoline')
 const spec = require('akh.core.spec')
 const ContMonad = require('../spec/cont')
 
 /* Transformer
  ******************************************************************************/
 var runContT = (m, k) =>
-    new tail.Tail(m._run, k)
+    tramp.tail(m._run, k)
 
 /**
  * Continuation monad transformer.
@@ -43,6 +43,10 @@ const ContT = m => {
                     f(reify(k)),
                     k)))
     
+    Instance.prototype.run = function(k) {
+        return ContT.run(this, k)
+    }
+
     return Instance
 }
 
@@ -52,7 +56,7 @@ const ContT = m => {
  * @param m ContT computation.
  * @param k Outer continuation.
  */
-ContT.runContT = (m, k) =>
-    tail.trampoline(runContT(m, k))
+ContT.run = (m, k) =>
+    tramp.trampoline(runContT(m, k))
 
 module.exports = ContT
