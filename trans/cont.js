@@ -32,7 +32,7 @@ const ContT = m => {
     spec.Transformer(Instance, m,
         t =>
             new Instance(k =>
-                t.chain(x => tail.trampoline(k(x)))))
+                t.chain(x => tramp.trampoline(k(x)))))
     
     const reify = k => x => new Instance(_ => k(x))
 

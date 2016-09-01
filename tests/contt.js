@@ -1,11 +1,11 @@
 "use strict"
 const assert = require('chai').assert
+const State = require('akh.state').State
 const ContT = require('../index').ContT
-const State = require('../index').state
 
 const run = function (c, s, k) {
-    return State.evalState(
-        ContT.runContT(
+    return State.eval(
+        ContT.run(
             c,
             function (x) { return State.of(k(x)) }),
         s)
@@ -17,7 +17,7 @@ const sqr = function (x) { return x * x }
 
 const M = ContT(State)
 
-/*
+
 describe('ContT', () => {
     it("simple_of", () => {
         const c = M.of(3)
@@ -43,4 +43,3 @@ describe('ContT', () => {
     })
 
 })
-*/
