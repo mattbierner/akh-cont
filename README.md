@@ -62,3 +62,5 @@ $ cd akh-cont
 $ npm install # install dev packages
 $ npm test # run tests
 ```
+
+[fl]: https://github.com/fantasyland/fantasy-land
