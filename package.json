@@ -24,7 +24,7 @@
     "akh.identity": "^0.1.0"
   },
   "devDependencies": {
-    "akh.state": "0.0.0",
+    "akh.state": "^0.0.0",
     "chai": "*",
     "mocha": "*"
   },
