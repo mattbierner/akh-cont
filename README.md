@@ -31,7 +31,7 @@ require('akh').ContT
 Perform a continuation computation `m` and complete with outer continuation `k`.
 
 ```js
-const Cont = requre('akh.cont').Cont
+const Cont = require('akh.cont').Cont
 
 const c = Cont.of(3)
     .callcc(k =>
